@@ -23,7 +23,13 @@ public class MeasurementController {
                 value = 0; // handle invalid characters
             }
 
-            partOfWord = word.substring(i + 1, value + 1);
+            if(value >= word.length()){
+                value = word.length();
+                partOfWord = word.substring(i, value);
+            }
+            else{
+                partOfWord = word.substring(i+1, value +1);
+            }
 
             for (int j = 0; j < partOfWord.length(); j++) {
                 if (partOfWord.charAt(j) == 'z') {
